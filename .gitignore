@@ -21,3 +21,49 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+backend/.idea/*
+
+backend/cities/help.md
+backend/cities/.idea/*
+backend/cities/target/
+!backend/cities/.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+backend/cities/.apt_generated
+backend/cities/.classpath
+backend/cities/.factorypath
+backend/cities/.project
+backend/cities/.settings
+backend/cities/.springBeans
+backend/cities/.sts4-cache
+
+### IntelliJ IDEA 
+backend/cities/*.iws
+backend/cities/*.iml
+backend/cities/*.ipr
+
+
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+/frontend.pnp.js
+
+# testing
+/frontend/coverage
+
+# production
+/frontend/build
+
+# misc
+/frontend/.DS_Store
+/frontend/.env.local
+/frontend/.env.development.local
+/frontend/.env.test.local
+/frontend/.env.production.local
+
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
