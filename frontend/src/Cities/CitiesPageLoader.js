@@ -29,7 +29,7 @@ export const CitiesPageLoader = () => {
     if(!loaded) {return <div>Loading...</div>}
 
     return (
-        <Paper style={{backgroundColor:"lightgrey", padding:"10px"}}>
+        <Paper style={{backgroundColor:"lightgrey", padding:"10px", height:"100%" }}>
             <SearchBar style={{marginBottom:"5px"}} onRequestSearch={setSearch}/>
             <CitiesPage page={page} size={size} search={search} cities={cities}
                 totalPages={totalPages} totalSize={totalSize}

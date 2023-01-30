@@ -14,8 +14,8 @@ export const CitiesPage = ({cities, page, setPage, size, setSize, totalSize, upd
     };
 
     return (
-        <Paper style={{backgroundColor:"#EFEFEF", margin:"10px", marginTop:"20px"}}>
-            <Grid container spacing={2}> 
+        <Paper style={{backgroundColor:"#EFEFEF", margin:"10px", marginTop:"20px", padding: "10px" }}>
+            <Grid container spacing={2} > 
                 {cities.map(
                     city => 
                         <Grid item xs={6} md={4} lg={2}>
@@ -24,9 +24,11 @@ export const CitiesPage = ({cities, page, setPage, size, setSize, totalSize, upd
                     )
                 }
             </Grid>
-            <Table>
+            {/** Going with table pagination since I like the control of size and labels more. */}
+            <Table> 
                 <TableFooter>
-                    <TablePagination
+                    <TablePagination 
+                        labelRowsPerPage="Items per Page: "
                         rowsPerPageOptions={[5, 10, 15, 20, 25]}
                         count={totalSize}
                         rowsPerPage={size}
