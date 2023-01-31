@@ -28,7 +28,7 @@ public class CityController {
     return cityService.getCityPage(cityRequestConfiguration);
   }
 
-  @PutMapping("/")
+  @PutMapping("/edit")
   public void updateCity(@RequestBody City city){
     cityService.updateCity(city);
   }

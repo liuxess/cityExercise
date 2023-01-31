@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class CommandLineDatabaseLoader implements CommandLineRunner {
 
   @Autowired
-  CityRepository cityRepository;
+  private CityRepository cityRepository;
 
   @Override
   public void run(String...args) throws Exception {
