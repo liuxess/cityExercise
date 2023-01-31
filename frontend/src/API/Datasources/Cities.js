@@ -4,11 +4,11 @@ import GLOBAL_CONFIG from '../Config';
 const link = GLOBAL_CONFIG.internalAPISource;
 
 export const getPaginatedCities = (page, size, search, callback) =>{
-    axios.post(link+'cities/', {
+    axios.post(link+'api/cities/', {
         page: page,
         size: size,
         search: search
-    }).then((response) => {
+    },{withCredentials: "true"}).then((response) => {
             if (typeof callback == typeof (() => {})) callback(response.data);
         })
         .catch(() => {
@@ -17,11 +17,11 @@ export const getPaginatedCities = (page, size, search, callback) =>{
 }
 
 export const updateCity = (id, name, photo, callback) =>{
-    axios.put(link+'cities/', {
+    axios.put(link+'api/cities/edit', {
         id: id,
         name: name,
         photo: photo
-    }).then(() => {
+    },{withCredentials: "true"}).then(() => {
             if (typeof callback == typeof (() => {})) callback();
         })
         .catch(() => {

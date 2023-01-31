@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const GLOBAL_CONFIG = {
-    internalAPISource: 'http://localhost:8080/api/'
+    internalAPISource: 'http://localhost:8080/'
 };
 
 axios.defaults.headers.common["Accept"] = 'application/json';

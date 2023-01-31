@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import { CitiesPageLoader } from './Cities/CitiesPageLoader';
+import PageWrapper from './pages/PageWrapper';
 
 function App() {
   return (
-    <CitiesPageLoader />
+    <PageWrapper />
   );
 }
 
