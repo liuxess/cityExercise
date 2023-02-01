@@ -50,3 +50,13 @@ Currently, the environment is set up with 2 Users:
 2. Username: 'Editor'; Password: 'Password2'; able to view and edit the city list;
 
 Frontend Will Prompt You with a login screen before allowing You to progress to the City list screen. 
+
+## UI Screenshots
+### Login
+![login Screen](screenshots/LoginScreen.png)
+
+### City Library
+![city library](screenshots/CityLibrary.png)
+
+### Editing City Modal
+![edit modal](screenshots/EditModal.png)
