@@ -6,7 +6,7 @@ export const CityTile = ({name, photo, allowEdit, setEdit}) => {
 
     return (
         <Paper>
-            <Typography align="center" variant="h4">
+            <Typography align="center" variant="h4" paddingTop="10px">
                 {name}
                 {allowEdit &&
                 <IconButton color="primary" onClick={setEdit}>
@@ -15,7 +15,7 @@ export const CityTile = ({name, photo, allowEdit, setEdit}) => {
             </Typography>
             <Divider />
 
-            <div  style={{ justifyContent: "center", display: "flex" }}>
+            <div style={{ justifyContent: "center", display: "flex", padding: "10px" }}>
                 <Avatar align="center" alt={name} src={photo} 
                     sx={{height:120, width:120}} />
             </div>
