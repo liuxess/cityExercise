@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class CityCSVMapper {
 
     private static final String COMMA_DELIMITER = ",";
-    private List<String> headers = new ArrayList<>(); //If fields start moving positions, this can be used to dynamically set fields
+    private final List<String> headers = new ArrayList<>(); //If fields start moving positions, this can be used to dynamically set fields
     public List<City> mapCitiesFromCSV (File csvFile) throws FileNotFoundException {
       List<City> cities = new ArrayList<>();
       Scanner scanner = new Scanner(csvFile);//getting the headers;

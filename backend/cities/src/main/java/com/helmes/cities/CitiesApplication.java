@@ -2,10 +2,10 @@ package com.helmes.cities;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-//import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication//(exclude = { SecurityAutoConfiguration.class})
+@SpringBootApplication
+@EnableJpaRepositories
 public class CitiesApplication {
 
 	public static void main(String[] args) {

@@ -1,13 +1,20 @@
 package com.helmes.cities.models.entities;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class City {
 
   @Id
@@ -20,4 +27,5 @@ public class City {
 
   @Column(length = 2048) //maximum url size
   private String photo;
+
 }

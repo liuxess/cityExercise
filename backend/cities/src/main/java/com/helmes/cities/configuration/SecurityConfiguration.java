@@ -3,7 +3,6 @@ package com.helmes.cities.configuration;
 import static org.springframework.security.crypto.factory.PasswordEncoderFactories.createDelegatingPasswordEncoder;
 
 import enums.UserRole;
-import jakarta.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,11 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -34,7 +29,7 @@ public class SecurityConfiguration{
 
     UserDetails admin = User.withUsername("Editor")
         .password(passwordEncoder.encode("Password2"))
-        .roles(UserRole.DEFAULT.toString(), UserRole.ALLOW_EDIT.toString())
+        .roles(UserRole.ALLOW_EDIT.toString(), UserRole.DEFAULT.toString() )
         .build();
 
     return new InMemoryUserDetailsManager(user, admin);
@@ -54,11 +49,11 @@ public class SecurityConfiguration{
         })
         .and()
         .authorizeHttpRequests()
-        .requestMatchers("api/*")
+        .requestMatchers("/api/*")
         .hasRole(UserRole.DEFAULT.toString())
-        .requestMatchers("api/cities/edit")
+        .requestMatchers("/api/cities/edit")
         .hasRole(UserRole.ALLOW_EDIT.toString())
-        .requestMatchers("login", "/api/success").permitAll()
+        .requestMatchers("/login", "/api/success").permitAll()
         .anyRequest()
         .authenticated()
         .and()
