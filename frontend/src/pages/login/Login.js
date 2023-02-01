@@ -29,7 +29,7 @@ export default function LogIn(props) {
                             variant="outlined"
                             margin="normal"
                             required
-                            fullWidth   
+                            fullWidth
                             id="Username"
                             label="Username"
                             name="Username"

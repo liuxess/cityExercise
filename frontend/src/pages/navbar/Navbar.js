@@ -3,14 +3,8 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-/*import Switch from '@mui/material/Switch';*/
 import logo from '../../logo.svg';
 import { Button } from '@mui/material';
-//import { ChangeTheme } from '../reducers/actions/ThemeActions';
-
 
 Navbar.propTypes = {
     PageName: PropTypes.string,
@@ -20,7 +14,6 @@ Navbar.propTypes = {
 
 export default function Navbar({logOut}) {
 
-    //document.body.style = theme.bodyStyle;
     const NavbarHeight = '45px';
     return (
         <div>

@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Paper, Input, IconButton } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -41,6 +40,7 @@ const SearchBar = (
           onClick={handleRequestSearch}
           style={{transform: "scale(1, 1)",}}
           disabled={disabled}
+          title="Search"
         >
           <SearchIcon />
         </IconButton>
