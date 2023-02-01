@@ -1,5 +1,5 @@
 # City Exercise by Helmes
-Done by Lukas Jankauskas from Telesoftas;
+Done by Lukas Jankauskas from Telesoftas with Java SpringBoot and React.js 
 
 ## Prerequisites
 - `maven` 
