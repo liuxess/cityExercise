@@ -42,19 +42,17 @@ public class SecurityConfiguration{
 
   @Bean
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-   /* http.formLogin().loginProcessingUrl("/login").successForwardUrl("/api/roles")
-        .and().cors().disable().csrf().disable()
-        .authorizeHttpRequests().anyRequest().permitAll()
-        ;*/
     http.csrf().disable()
-        .cors().configurationSource(request -> {
+        .cors().configurationSource(
+            request -> {
           CorsConfiguration config = new CorsConfiguration();
           config.setAllowedHeaders(Collections.singletonList("*"));
           config.setAllowedMethods(Collections.singletonList("*"));
           config.addAllowedOrigin("http://localhost:3000"); //Could not for the life of me figure out what's wrong with CORS
           config.setAllowCredentials(true);
           return config;
-        }).and()
+        })
+        .and()
         .authorizeHttpRequests()
         .requestMatchers("api/*")
         .hasRole(UserRole.DEFAULT.toString())
@@ -76,15 +74,5 @@ public class SecurityConfiguration{
   @Bean
   public PasswordEncoder passwordEncoder() {
     return createDelegatingPasswordEncoder();
-  }
-
-  @Bean
-  public WebMvcConfigurer corsConfigurer() {
-    return new WebMvcConfigurer() {
-      @Override
-      public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedMethods("*");
-      }
-    };
   }
 }

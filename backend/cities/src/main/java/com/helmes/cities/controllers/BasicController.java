@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BasicController {
 
   @RequestMapping("/success")
-  public void success(){
+  public void success(){ //this ensures a 200 route available
   }
 
 }

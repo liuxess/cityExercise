@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("api")
+@RequestMapping("api/")
 public class AuthenticationController {
 
-  @PostMapping("/roles")
+  @PostMapping("roles")
   public Collection<? extends GrantedAuthority> logIn(){
     return SecurityContextHolder.getContext().getAuthentication().getAuthorities();
   }
